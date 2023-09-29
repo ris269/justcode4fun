@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react'
 import MovieImages from './MovieImages'
+import RankingGrid from './RankingGrid'
 
 const RankItems = () => {
   const [items, setItems] = useState([])
@@ -17,7 +18,8 @@ const RankItems = () => {
 
   return (
     <main>
-      <div className='item-not-ranked'>
+      <RankingGrid items={items} imgArr={MovieImages} />
+      <div className='items-not-ranked'>
         {items.length > 0 ? (
           items.map((item) => (
             <div className='unranked-cell'>
@@ -26,7 +28,6 @@ const RankItems = () => {
                 src={MovieImages.find((o) => o.id === item.imageId)?.image}
                 alt={item.name}
               />
-              )
             </div>
           ))
         ) : (
