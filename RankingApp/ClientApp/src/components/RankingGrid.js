@@ -75,7 +75,7 @@ const RankingGrid = ({ items, imgArr }) => {
       <div className='rank-row bottom-tier'>{cellCollectionBottom}</div>
     )
     RankingGrid.push(
-      <div className='rank-roaw worst-tier'>{cellCollectionWorst}</div>
+      <div className='rank-row worst-tier'>{cellCollectionWorst}</div>
     )
 
     return RankingGrid
@@ -86,7 +86,7 @@ const RankingGrid = ({ items, imgArr }) => {
     return createRowsForGrid()
   }
 
-  return createRankingGrid()
+  return <div className='rankings'>{createRankingGrid()}</div>
 }
 
 export default RankingGrid
